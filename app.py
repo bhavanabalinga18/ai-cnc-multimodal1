@@ -15,6 +15,16 @@ st.set_page_config(page_title="AQKA-PINN CNC Control", layout="wide")
 
 st.title("🤖 AQKA-PINN: Autonomous Robotic Machining")
 st.markdown("---")
+# --- STAGE 1: DATA INPUT (MANUAL SENSOR SIMULATION) ---
+st.sidebar.header("📥 CNC Sensor Input")
+# These sliders represent Stage 1: Sensor Data Acquisition
+input_temp = st.sidebar.slider("Spindle Temp (°C)", 20, 200, 55)
+input_vib = st.sidebar.number_input("Vibration (G-force)", 0.0, 10.0, 0.5)
+input_wear = st.sidebar.slider("Tool Wear (mm)", 0.0, 1.0, 0.1)
+
+st.sidebar.markdown("---")
+st.sidebar.info("Data is flowing to Stage 3 (Quantum) and Stage 4 (Physics)")
+
 # --- USER INPUT SIDEBAR (Stage 1 Data Input) ---
 st.sidebar.header("📥 Manual CNC Input")
 input_temp = st.sidebar.slider("Current Temperature (°C)", 20, 200, 50)
