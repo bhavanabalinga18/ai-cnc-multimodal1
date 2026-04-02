@@ -15,6 +15,13 @@ st.set_page_config(page_title="AQKA-PINN CNC Control", layout="wide")
 
 st.title("🤖 AQKA-PINN: Autonomous Robotic Machining")
 st.markdown("---")
+# --- USER INPUT SIDEBAR (Stage 1 Data Input) ---
+st.sidebar.header("📥 Manual CNC Input")
+input_temp = st.sidebar.slider("Current Temperature (°C)", 20, 200, 50)
+input_vibration = st.sidebar.number_input("Vibration Amplitude (mm)", 0.0, 5.0, 0.2)
+input_wear = st.sidebar.slider("Tool Wear Index", 0.0, 1.0, 0.1)
+
+st.sidebar.markdown("---")
 
 # Define the 4 Tabs based on your 6-Stage Research Pipeline[span_0](start_span)[span_0](end_span)
 tab1, tab2, tab3, tab4 = st.tabs([
