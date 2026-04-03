@@ -1,9 +1,16 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import plotly.graph_objects as go
 import time
 
+# SAFETY WRAPPER FOR PLOTLY
+try:
+    import plotly.graph_objects as go
+    PLOTLY_LOADED = True
+except ImportError:
+    PLOTLY_LOADED = False
+    st.warning("⚠️ Quantum Visualization Engine is still installing. Please refresh in 1 minute.")
+    
 # --- 0. STRESS CONFIG ---
 st.set_page_config(page_title="AQKA-PINN INTERFACE", layout="wide", initial_sidebar_state="collapsed")
 
