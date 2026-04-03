@@ -45,11 +45,12 @@ tab1, tab2, tab3, tab4 = st.tabs([
 with tab1:
     st.header("Stages 1 & 2: Multi-Modal Sensing")
     col1, col2 = st.columns([2, 1])
-        # --- STAGE 1: .CSV DATA UPLOAD (Digital Twin Input) ---
+         # --- STAGE 1: .CSV DATA UPLOAD BUTTON (Line 48) ---
     st.subheader("📁 Upload CNC Sensor Logs")
     uploaded_file = st.file_uploader("Choose a CSV file from the machine controller", type="csv")
-
-    if uploaded_file is not None:
+        if uploaded_file is not None:
+            
+    
         # Stage 1: Data Acquisition[span_0](start_span)[span_0](end_span)
         df = pd.read_csv(uploaded_file)
         st.success("✅ Data Acquisition Complete. Passing to Stage 2 (PCA).[span_1](start_span)[span_1](end_span)")
